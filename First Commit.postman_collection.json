@@ -1,0 +1,422 @@
+{
+	"info": {
+		"_postman_id": "d6939f53-65de-4ab7-b5e3-6caf0bf8982a",
+		"name": "First Commit",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get all with filters",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqb2Fub2xkYW5pZWxAZ21haWwuY29tIiwicm9sZXMiOiJBRE1JTiIsImlhdCI6MTY0MzIwNzYxMH0.yqzPmtgk-X3iARJIkJGEmaOPOR3MxxlivIUwqGHKlByew38mLYmMxrPftpL_vDjZKE0busUncWGaT25BZJ4vZA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "transfer",
+							"value": "null",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}api/candidates/filters?",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"candidates",
+						"filters"
+					],
+					"query": [
+						{
+							"key": "transfer",
+							"value": "true",
+							"disabled": true
+						},
+						{
+							"key": "remote",
+							"value": "null",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqb2Fub2xkYW5pZWxAZ21haWwuY29tIiwicm9sZXMiOiJBRE1JTiIsImlhdCI6MTY0MzExMjcwNywiZXhwIjoxNjQzMTE2MzA3fQ.5xdLdaX5Hzu6-7KO4WGI2l2ppmEr0jDZEcJkdkj_lFLmOeAnu9ot2Ab_rMcu6um7Lug6lzPAPKo4JU4QLbXQ1w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}api/candidates/105",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"candidates",
+						"105"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqb2Fub2xkYW5pZWxAZ21haWwuY29tIiwicm9sZXMiOiJBRE1JTiIsImlhdCI6MTY0MzIwNzYxMH0.yqzPmtgk-X3iARJIkJGEmaOPOR3MxxlivIUwqGHKlByew38mLYmMxrPftpL_vDjZKE0busUncWGaT25BZJ4vZA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fullname\": \"Sara Bermudez\",\n    \"email\": \"sara@gmail.com\",\n    \"phone\": \"992244131231\",\n    \"country\": \"Brasil\",\n    \"city\": \"Rio de Janeiro\",\n    \"transfer\" : true,\n    \"remote\": true,\n    \"local\": false,\n    \"tags\": [\n        { \"name\": \"Hibernate\"},\n        { \"name\": \"Java\"},\n        { \"name\": \"Spring\"}\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}api/candidates/",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"candidates",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqb2Fub2xkYW5pZWxAZ21haWwuY29tIiwicm9sZXMiOiJBRE1JTiIsImlhdCI6MTY0Mjc2NzMxMCwiZXhwIjoxNjQyNzcwOTEwfQ.5MHH5nq5HvT4AmMShkB5Nh0qX7udf2lHKF0D-WSRPo2Mkyv1GQdR2GXJMXXiN7Qrq1AKKZOA0hP2NuTO9a3ZOw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fullname\": \"Maria Gimenez\",\n    \"email\": \"maria@gmail.com\",\n    \"phone\": \"23212131231\",\n    \"country\": \"España\",\n    \"city\": \"Barcelona\",\n    \"transfer\" : true,\n    \"remote\": true,\n    \"local\": true,\n    \"tags\": [\n        { \"name\": \"React\"},\n        { \"name\": \"Java\"},\n        { \"name\": \"JavaScript\"}\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}api/candidates/1",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"candidates",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqb2Fub2xkYW5pZWxAZ21haWwuY29tIiwicm9sZXMiOiJBRE1JTiIsImlhdCI6MTY0MjkzODk0MiwiZXhwIjoxNjQyOTQyNTQyfQ.r0GtAjyelTII6qTDKsKL-3C_oLQQRhm5Rthn3NC1zI09QZDPE5zZPywZBCP9OkdP-qoNF-FM14lxDM0Uh09iEg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}api/candidates/28",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"candidates",
+						"28"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"joanoldaniel@gmail.com\",\n    \"password\": \"admin\",\n    \"remember\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}api/auth/login/",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"auth",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "forgot",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"joanoldaniel@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}api/auth/forgot",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"auth",
+						"forgot"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "new pass",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"joanoldaniel@gmail.com\",\n    \"password\": \"admin2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}api/auth/new-pass",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"auth",
+						"new-pass"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add image",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqb2Fub2xkYW5pZWxAZ21haWwuY29tIiwicm9sZXMiOiJBRE1JTiIsImlhdCI6MTY0MzExMjcwNywiZXhwIjoxNjQzMTE2MzA3fQ.5xdLdaX5Hzu6-7KO4WGI2l2ppmEr0jDZEcJkdkj_lFLmOeAnu9ot2Ab_rMcu6um7Lug6lzPAPKo4JU4QLbXQ1w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/Users/danieljoanol/Desktop/OpenBootcamp/FirstCommit/Semana3/fc-react/src/images/profile_picture.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}api/candidates/photo/45",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"candidates",
+						"photo",
+						"45"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add curriculum/pdf",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqb2Fub2xkYW5pZWxAZ21haWwuY29tIiwicm9sZXMiOiJBRE1JTiIsImlhdCI6MTY0MjE1NzQxNiwiZXhwIjoxNjQyMTYxMDE2fQ.EY-KV9yCMB05GmtaH4hWk3AAQj_JG1qY18BGI3JpMbT-OV--wrgF5hpDhK0qEHVCAZpNqIUSniNSj9G2RYCEBg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/Users/danieljoanol/Desktop/OpenBootcamp/FirstCommit/Semana3/fc-react/src/images/Pinguino_CV.pdf"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}api/candidates/pdf/1",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"candidates",
+						"pdf",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get the name of the user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqb2Fub2xkYW5pZWxAZ21haWwuY29tIiwicm9sZXMiOiJBRE1JTiIsImlhdCI6MTY0MjY3MTcxMCwiZXhwIjoxNjQyNjc1MzEwfQ.eHTPUBb6l3GGQ_ipr2uCZZG00y-FTXj1Uhg2oREUB28LW_H0oOOWahdMKoDgHEzwjcwaf4jzlkv_2mh3WDJfwA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}api/user/name",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"user",
+						"name"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "new user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqb2Fub2xkYW5pZWxAZ21haWwuY29tIiwicm9sZXMiOiJBRE1JTiIsImlhdCI6MTY0MzE5NzA5OCwiZXhwIjoxNjQzMjAwNjk4fQ.sqLVS7GpsTgonywk_wTvl5183OnxZ7QlCwiaCAGpLRjrSx_RbY_avoQ1TfQZbs6zSd87_0kSVNb2EVXeNCSXLQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"test@gmail.com\",\n    \"password\": \"admin\",\n    \"name\": \"test\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}api/user/",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"user",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
