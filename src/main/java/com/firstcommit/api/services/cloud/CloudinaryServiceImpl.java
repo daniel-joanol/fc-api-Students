@@ -59,13 +59,4 @@ public class CloudinaryServiceImpl implements CloudinaryService{
 
         return response.get("secure_url").toString();
     }
-
-    public Map deleteImage(String publicId){
-        try {
-            return cloudinary.uploader().destroy(publicId, ObjectUtils.emptyMap());
-        } catch (Exception e){
-            System.out.println(e);
-        }
-        return null;
-    }
 }

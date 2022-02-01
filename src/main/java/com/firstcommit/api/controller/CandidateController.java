@@ -160,11 +160,4 @@ public class CandidateController {
     public ResponseEntity<?> delete(@PathVariable Long id, @CurrentSecurityContext(expression="authentication?.name") String owner){
         return candidateServiceImpl.delete(id, owner);
     }
-
-    @PreAuthorize("hasAuthority('ADMIN')")
-    @DeleteMapping("/photo")
-    @ApiOperation("Remove image by publicId")
-    public Map deleteImage(@RequestBody String publicId){
-        return cloudinaryService.deleteImage(publicId);
-    }
 }
